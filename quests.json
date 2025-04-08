@@ -24,9 +24,9 @@
       },
       "c": {
         "prompt": "Calculate the bearing of A from B.",
-        "answer": "71.6",
+        "answer": "252",
         "points": 3,
-        "hint": "Use tan⁻¹ and remember bearings are clockwise from north."
+        "hint": "Bearings are the direction measured from true north, rotating clockwise."
       },
       "d": {
         "subparts": {
