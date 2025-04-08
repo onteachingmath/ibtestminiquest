@@ -43,8 +43,8 @@
             "hint": "Use midpoint and negative reciprocal of the slope."
           },
           "iii": {
-            "prompt": "Find the intersection of two bisectors to locate the center.",
-            "answer": "(6,8)",
+            "prompt": "Find the intersection of two bisectors to locate the center.  Write your answer correct to three significant figures.",
+            "answer": "(8.67,10)",
             "points": 3,
             "hint": "Set the equations equal and solve."
           }
