@@ -7,7 +7,8 @@ body {
 }
 .container {
   display: flex;
-  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .left-panel, .middle-panel, .right-panel {
   padding: 20px;
