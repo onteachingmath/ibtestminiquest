@@ -1,0 +1,55 @@
+{
+  "quest1": {
+    "title": "Jackie at the Amusement Park",
+    "meta": {
+      "year": 2024,
+      "paper": 2,
+      "timezone": "TZ2",
+      "topic": "Geometry",
+      "total_points": 14
+    },
+    "parts": {
+      "a": {
+        "prompt": "Write down the distance between B and C.",
+        "answer": "20",
+        "points": 1,
+        "hint": "Same x-coordinate means vertical distance = |20 - 0|",
+        "image": "assets/graph2.png"
+      },
+      "b": {
+        "prompt": "Write down the distance between A and B.",
+        "answer": "12.6",
+        "points": 2,
+        "hint": "Use the distance formula √((x₂−x₁)² + (y₂−y₁)²)"
+      },
+      "c": {
+        "prompt": "Calculate the bearing of A from B.",
+        "answer": "71.6",
+        "points": 3,
+        "hint": "Use tan⁻¹ and remember bearings are clockwise from north."
+      },
+      "d": {
+        "subparts": {
+          "i": {
+            "prompt": "Write down the gradient of AC as a fraction.",
+            "answer": "-4/3", 
+            "points": 2,
+            "hint": "Average the x- and y-values of A and B."
+          },
+          "ii": {
+            "prompt": "Find the equation of the perpendicular bisector of AB.",
+            "answer": "y = -3x + 36",
+            "points": 3,
+            "hint": "Use midpoint and negative reciprocal of the slope."
+          },
+          "iii": {
+            "prompt": "Find the intersection of two bisectors to locate the center.",
+            "answer": "(6,8)",
+            "points": 3,
+            "hint": "Set the equations equal and solve."
+          }
+        }
+      }
+    }
+  }
+}
