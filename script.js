@@ -14,10 +14,15 @@ async function loadQuest() {
     loadPart('a');
     document.getElementById("quest-title").textContent = `Quest 1: ${questData.title}`;
 
-    ['b', 'c', 'd'].forEach(part => {
-      document.querySelector(`[onclick="loadPart('${part}')"]`).style.pointerEvents = 'none';
-      document.querySelector(`[onclick="loadPart('${part}')"]`).style.opacity = 0.3;
-    });
+    // This section is now safe even if left-panel buttons are gone
+['b', 'c', 'd'].forEach(part => {
+  const button = document.querySelector(`[onclick="loadPart('${part}')"]`);
+  if (button) {
+    button.style.pointerEvents = 'none';
+    button.style.opacity = 0.3;
+  }
+});
+
   } catch (error) {
     console.error('Error loading quest data:', error);
   }
@@ -143,14 +148,17 @@ function advanceToNextPart() {
   const nextIndex = partsOrder.indexOf(currentPart) + 1;
   if (nextIndex < partsOrder.length) {
     const nextPart = partsOrder[nextIndex];
-    const nextButton = document.querySelector(`[onclick="loadPart('${nextPart}')"]`);
-    if (nextButton) {
-      nextButton.style.pointerEvents = 'auto';
-      nextButton.style.opacity = 1;
-      showPopup(`🎉 Part ${nextPart.toUpperCase()} unlocked!`);
-      setTimeout(() => loadPart(nextPart), 1200);
-    }
+    showPopup(`🎉 Part ${nextPart.toUpperCase()} unlocked!`);
+    setTimeout(() => loadPart(nextPart), 1200);
   }
+   else {
+    // Last part completed
+    showPopup("🏆 Congratulations! You've completed the quest!");
+    setTimeout(() => {
+      window.location.href = "map.html";
+    }, 4000); // Wait 4 seconds then go to the map
+  }
+  
 }
 
 window.onload = () => {
